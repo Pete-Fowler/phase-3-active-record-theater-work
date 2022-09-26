@@ -6,7 +6,8 @@ class Audition < ActiveRecord::Base
   end
 
   def call_back
-    self.role.hired = true
+    # self.role.hired = true
+    update(hired: true)
   end
 
 

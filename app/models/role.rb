@@ -11,6 +11,8 @@ class Role < ActiveRecord::Base
       arr << actor
     end
     arr
+    # OR
+    # auditions.map {|a| a.actor}
   end
 
   def locations
@@ -28,6 +30,9 @@ class Role < ActiveRecord::Base
     else
       lead
     end 
+
+    #OR
+    # auditions.find_by(hired: true) || 'no actor has been hired for this role'
   end
 
   def understudy
@@ -37,6 +42,8 @@ class Role < ActiveRecord::Base
     else
       under
     end 
+    #OR
+    # auditions.where(hired: true).second || 'no actor has been hired for this role' 
   end
 
 end
