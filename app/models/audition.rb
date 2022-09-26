@@ -1,3 +1,14 @@
 class Audition < ActiveRecord::Base
-  has_many :roles 
+  belongs_to :role 
+
+  def role
+    self.role
+  end
+
+  def call_back
+    self.role.hired = true
+  end
+
+
+
 end
